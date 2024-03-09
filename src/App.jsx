@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
@@ -22,6 +22,9 @@ function App() {
     newUrl.splice(index, 1);
     setUrl(newUrl);
   }
+  useEffect(()=>{
+    setTimeout(()=>setResponse(""),2000);
+  },[location]);
 
   async function submitHandler() {
     try {
